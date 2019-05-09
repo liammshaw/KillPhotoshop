@@ -126,7 +126,7 @@ public class PictureTester
   
   public static void testmirrorHorizontal()
 	  {
-		  Picture arch = new Picture("arch.jpg");
+		  Picture arch = new Picture("dog.jpg");
 		  Pixel[][] pixels = arch.getPixels2D();
 		    Pixel leftPixel = null;
 		    Pixel rightPixel = null;
