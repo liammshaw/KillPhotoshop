@@ -30,3 +30,5 @@ public interface DigitalPicture
 	  public void explore(); // explore the picture
 	  public boolean write(String fileName); // write out a file
 	  }
+
+//test
