@@ -11,19 +11,19 @@ public class PictureTester
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
+    //Picture beach = new Picture("beach.jpg");
+    KillPhotoshopRunner.p.explore();
+    KillPhotoshopRunner.p.zeroBlue();
+    KillPhotoshopRunner.p.explore();
   }
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("arch.jpg");
-    caterpillar.explore();
-    caterpillar.mirrorVertical();
-    caterpillar.explore();
+    //Picture caterpillar = new Picture("arch.jpg");
+    KillPhotoshopRunner.p.explore();
+    KillPhotoshopRunner.p.mirrorVertical();
+    KillPhotoshopRunner.p.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -38,64 +38,40 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
-    canvas.createCollage();
-    canvas.explore();
+    //Picture canvas = new Picture("640x480.jpg");
+	  KillPhotoshopRunner.p.explore();
+	  KillPhotoshopRunner.p.createCollage();
+	  KillPhotoshopRunner.p.explore();
   }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
-    swan.explore();
+    
+	KillPhotoshopRunner.p.edgeDetection(KillPhotoshopRunner.num);
+    KillPhotoshopRunner.p.explore();
   }
   
   public static void testkeepOnlyBlue()
   {
-	  Picture arch = new Picture("arch.jpg");
-	  Pixel[][] pixels = arch.getPixels2D();
-	  for (Pixel[] rowArray : pixels)
-		  {
-			  for (Pixel pixelObj : rowArray)
-				  {
-					  pixelObj.setRed(0);
-					  pixelObj.setGreen(0);
-				  }
-		  }
-	  arch.explore();
+	  KillPhotoshopRunner.p.explore();
+	  KillPhotoshopRunner.p.keepOnlyBlue();
+	  KillPhotoshopRunner.p.explore();
   }
   
   public static void testnegate()
   {
-	  Picture arch = new Picture("arch.jpg");
-	  Pixel[][] pixels = arch.getPixels2D();
-	  for (Pixel[] rowArray : pixels)
-		  {
-			  for (Pixel pixelObj : rowArray)
-				  {
-					  pixelObj.setRed(pixelObj.getRed() - 255);
-					  pixelObj.setGreen(pixelObj.getGreen() - 255);
-					  pixelObj.setBlue(pixelObj.getBlue() -255);
-				  }
-		  }
-	  arch.explore();
+	  KillPhotoshopRunner.p.explore();
+	  KillPhotoshopRunner.p.negate();
+	  KillPhotoshopRunner.p.explore();
   }
   
   public static void testgrayScale()
 	  {
-		  Picture arch = new Picture("arch.jpg");
-		  Pixel[][] pixels = arch.getPixels2D();
-		  for (Pixel[] rowArray : pixels)
-			  {
-				  for (Pixel pixelObj : rowArray)
-					  {
-						  pixelObj.setRed((pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen())/3);
-						  pixelObj.setGreen((pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen())/3);
-						  pixelObj.setBlue((pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen())/3);
-					  }
-			  }
-		  arch.explore();
+		  
+		  KillPhotoshopRunner.p.explore();
+		  KillPhotoshopRunner.p.grayScale();
+		  KillPhotoshopRunner.p.explore();
 	  }
   
   public static void testfixUnderwater()
@@ -107,78 +83,30 @@ public class PictureTester
   
   public static void testmirrorRightToLeft()
 	  {
-		  Picture arch = new Picture("arch.jpg");
-		  Pixel[][] pixels = arch.getPixels2D();
-		    Pixel leftPixel = null;
-		    Pixel rightPixel = null;
-		    int width = pixels[0].length;
-		    for (int row = 0; row < pixels.length; row++)
-		    	{
-		    	for (int col = width/2; col < pixels[row].length; col++)
-		    		{
-			        leftPixel = pixels[row][col];
-			        rightPixel = pixels[row][width - 1 - col];
-			        rightPixel.setColor(leftPixel.getColor());
-		    		}
-		    	}
-		    arch.explore();
+		  KillPhotoshopRunner.p.explore();
+		  KillPhotoshopRunner.p.mirrorRightToLeft();
+		  KillPhotoshopRunner.p.explore();
 	  }
   
   public static void testmirrorHorizontal()
 	  {
-		  Picture arch = new Picture("dog.jpg");
-		  Pixel[][] pixels = arch.getPixels2D();
-		    Pixel leftPixel = null;
-		    Pixel rightPixel = null;
-		    int height = pixels.length;
-		    for (int col = 0; col < pixels[0].length; col++)
-		    	{
-		    	for (int row =0; row < pixels.length; row++)
-		    		{
-			        leftPixel = pixels[row][col];
-			        rightPixel = pixels[height-1-row][col];
-			        rightPixel.setColor(leftPixel.getColor());
-		    		}
-		    	}
-		    arch.explore();
+		  KillPhotoshopRunner.p.explore();
+		  KillPhotoshopRunner.p.mirrorHorizontal();
+		  KillPhotoshopRunner.p.explore();
 	  }
   
   public static void testmirrorHorizontalBotToTop()
 	  {
-		  Picture arch = new Picture("arch.jpg");
-		  Pixel[][] pixels = arch.getPixels2D();
-		    Pixel leftPixel = null;
-		    Pixel rightPixel = null;
-		    int height = pixels.length;
-		    for (int col = 0; col < pixels[0].length; col++)
-		    	{
-		    	for (int row =height/2; row < pixels.length; row++)
-		    		{
-			        leftPixel = pixels[row][col];
-			        rightPixel = pixels[height-1-row][col];
-			        rightPixel.setColor(leftPixel.getColor());
-		    		}
-		    	}
-		    arch.explore();
+		  KillPhotoshopRunner.p.explore();
+		  KillPhotoshopRunner.p.mirrorHorizontalBotToTop();
+		  KillPhotoshopRunner.p.explore();
 	  }
   
   public static void testmirrorDiagonaly()
 	  {
-		  Picture arch = new Picture("blobfish.jpg");
-		  Pixel[][] pixels = arch.getPixels2D();
-		    Pixel leftPixel = null;
-		    Pixel rightPixel = null;
-		    int height = pixels.length;
-		    for (int row = 0; row < pixels.length; row++)
-		    	{
-		    	for (int col =0 + row; col < pixels[0].length; col++)
-		    		{
-			        leftPixel = pixels[row][col];
-			        rightPixel = pixels[col][row];
-			        rightPixel.setColor(leftPixel.getColor());
-		    		}
-		    	}
-		    arch.explore();
+		  KillPhotoshopRunner.p.explore();
+		  KillPhotoshopRunner.p.mirrorDiagonaly();
+		  KillPhotoshopRunner.p.explore();
 	  }
   
 	public static void testsnowman()
@@ -282,3 +210,14 @@ public class PictureTester
     //testGetAverageForColumn(0);
   }
 }
+
+//Picture arch = new Picture("arch.jpg");
+//Pixel[][] pixels = arch.getPixels2D();
+//for (Pixel[] rowArray : pixels)
+//	  {
+//		  for (Pixel pixelObj : rowArray)
+//			  {
+//				  pixelObj.setRed(0);
+//				  pixelObj.setGreen(0);
+//			  }
+//	  }
