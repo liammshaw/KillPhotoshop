@@ -27,7 +27,9 @@ public class KillPhotoshopRunner
 			System.out.println("7) China");
 			System.out.println("8) gorge");
 			System.out.println("9) koala");
+
 			System.out.println("10) dog");
+
 			int userAnswer = userInt.nextInt();
 			switch(userAnswer) {
 				case 1: p = new Picture("arch.jpg");
@@ -58,6 +60,9 @@ public class KillPhotoshopRunner
 				break;
 				
 				case 10: p = new Picture("dog.jpg");
+				break;
+				
+				case 11: p = new Picture("bat.jpg");
 				break;
 			}
 			
